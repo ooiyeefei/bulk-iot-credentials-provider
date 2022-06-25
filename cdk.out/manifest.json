@@ -1,0 +1,346 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "BulkIotCredentialsProviderStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "BulkIotCredentialsProviderStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "BulkIotCredentialsProviderStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "BulkIotCredentialsProviderStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f18ce57923834f0945ae8c61665e663d38ceca37665c80c899320290d0e00c02.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "BulkIotCredentialsProviderStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "BulkIotCredentialsProviderStack.assets"
+      ],
+      "metadata": {
+        "/BulkIotCredentialsProviderStack/iotProvisioningS3Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotProvisioningS3Bucket5FAA6562"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotGeneralS3Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotGeneralS3Bucket0F8D155E"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotCustomerS3BucketAbc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotCustomerS3BucketAbc6A464A89"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotLocationS3Bucket123/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotLocationS3Bucket123B197A487"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotLocationS3Bucket456/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotLocationS3Bucket4567AEF99A5"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotGeneralQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotGeneralQueueE2AC0039"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotIndivQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotIndivQueueD463D4E3"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotGeneralBucketPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotGeneralBucketPolicy4A3BD6A4"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotIndividualBucketPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotIndividualBucketPolicy176E108B"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotGeneralQueuePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotGeneralQueuePolicy302F6752"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotIndividualQueuePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotIndividualQueuePolicy2C15685D"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotProvisioningPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotProvisioningPolicy95D92A70"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotAccessRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotAccessRole69B56948"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/C9IamRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "C9IamRole1AA194C6"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotProvisioningRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotProvisioningRoleB89AEAF1"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotDeployer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotDeployer9477B8BC"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotDeployer/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotDeployerDefaultPolicyFCB8D5BC"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotRoleAlias": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotRoleAlias"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iotAssumeRolePolicy": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotAssumeRolePolicy"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCB9E5F0B4"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1SubnetB4246D30"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1RouteTableFEE4B781"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1RouteTableAssociation0B0896DC"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1DefaultRoute91CEF279"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1EIP6AD938E8"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1NATGatewayE0556630"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2Subnet74179F39"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2RouteTable6F1A15F1"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2RouteTableAssociation5A808732"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2DefaultRouteB7481BBA"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2EIP4947BC00"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2NATGateway3C070193"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet1Subnet8BCA10E0"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet1RouteTableBE8A6027"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet1RouteTableAssociation347902D1"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet1DefaultRouteAE1D6490"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet2SubnetCFCDAA7A"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet2RouteTable0A19E10E"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet2RouteTableAssociation0C73D413"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPrivateSubnet2DefaultRouteF4F5CFD2"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCIGWB7E252D3"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/VPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCVPCGW99B986DC"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/Cloud9Env": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Cloud9Env"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/iot-provisioning-template": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iotprovisioningtemplate"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/RoleAlias": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoleAlias"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "BulkIotCredentialsProviderStack"
+    }
+  }
+}

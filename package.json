@@ -1,0 +1,42 @@
+{
+  "name": "bulk-iot-credentials-provider",
+  "version": "0.1.0",
+  "bin": {
+    "bulk-iot-credentials-provider": "bin/bulk-iot-credentials-provider.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/node": "^10.17.27",
+    "@types/prettier": "2.6.0",
+    "aws-cdk": "2.27.0",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-cloud9-alpha": "^2.27.0-alpha.0",
+    "@aws-cdk/aws-cloudformation": "^1.159.0",
+    "@aws-cdk/aws-iam": "^1.159.0",
+    "@aws-cdk/aws-iot": "^1.159.0",
+    "@aws-cdk/aws-lambda": "^1.159.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.159.0",
+    "@aws-cdk/aws-logs": "^1.159.0",
+    "@aws-cdk/aws-s3": "^1.159.0",
+    "@aws-cdk/aws-s3-deployment": "^1.159.0",
+    "@aws-cdk/aws-ssm": "^1.159.0",
+    "@aws-cdk/core": "^1.159.0",
+    "@aws-cdk/custom-resources": "^1.159.0",
+    "aws-cdk-lib": "^2.27.0",
+    "cdk-iot-core-certificates": "^0.0.5",
+    "constructs": "^10.0.0",
+    "parcel": "^2.6.0",
+    "source-map-support": "^0.5.21"
+  }
+}
