@@ -3,12 +3,11 @@
         "ThingName": {
             "Type": "String"
         },
-        "SerialNumber": {
+        "ThingTypeName": {
             "Type": "String"
         },
-        "Location": {
-            "Type": "String",
-            "Default": "WA"
+        "ThingGroups": {
+            "Type": "String"
         },
         "CSR": {
             "Type": "String"
@@ -21,15 +20,9 @@
                 "ThingName": {
                     "Ref": "ThingName"
                 },
-                "AttributePayload": {
-                    "version": "v1",
-                    "serialNumber": {
-                        "Ref": "SerialNumber"
-                    }
-                },
-                "ThingTypeName": "bulk-type",
+                "ThingTypeName": "server-type",
                 "ThingGroups": [
-                    "bulk-group"
+                    "server-group"
                 ]
             }
         },
@@ -45,7 +38,7 @@
         "policy": {
             "Type": "AWS::IoT::Policy",
             "Properties": {
-                "PolicyDocument": "{\"Version\": \"2012-10-17\",\"Statement\": [{\"Effect\": \"Allow\",\"Action\": [\"iot:AssumeRoleWithCertificate\"],\"Resource\": [\"*\"]}]}"
+                "PolicyName": "iotAssumeRolePolicy"
             }
         }
     }
