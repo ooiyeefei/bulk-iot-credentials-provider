@@ -23,7 +23,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f18ce57923834f0945ae8c61665e663d38ceca37665c80c899320290d0e00c02.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/85a2eba93051ff67207200b3de41554d1ca8ea821e647c5b444baf3c3112d127.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -297,16 +297,16 @@
             "data": "Cloud9Env"
           }
         ],
-        "/BulkIotCredentialsProviderStack/iot-provisioning-template": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "iotprovisioningtemplate"
-          }
-        ],
         "/BulkIotCredentialsProviderStack/Bucket": [
           {
             "type": "aws:cdk:logicalId",
             "data": "Bucket"
+          }
+        ],
+        "/BulkIotCredentialsProviderStack/ProvisioningRole": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProvisioningRole"
           }
         ],
         "/BulkIotCredentialsProviderStack/RoleAlias": [

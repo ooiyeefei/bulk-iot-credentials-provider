@@ -98,6 +98,26 @@ export class BulkIotCredentialsProviderStack extends Stack {
       ],
     });
 
+    //   {
+    //     "Version": "2012-10-17",
+    //     "Statement": [
+    //         {
+    //             "Action": [
+    //                 "s3:DeleteObject",
+    //                 "s3:GetObject",
+    //                 "s3:ListBucket",
+    //                 "s3:PutObject"
+    //             ],
+    //             "Resource": [
+    //                 "arn:aws:s3:::122852224663-iot-bucket-${credentials-iot:ThingName}",
+    //                 "arn:aws:s3:::122852224663-iot-bucket-${credentials-iot:ThingName}/*",
+    //                 "arn:aws:s3:::122852224663-iot-bucket-${credentials-iot:ThingTypeName}/${credentials-iot:ThingName}",
+    //                 "arn:aws:s3:::122852224663-iot-bucket-${credentials-iot:ThingTypeName}/${credentials-iot:ThingName}/*"
+    //             ],
+    //             "Effect": "Allow"
+    //         }
+    //     ]
+    // }
     const bucket_name_trunc = Fn.split('iot-bucket-', generalBucket.bucketArn.toString());
 
     // const bucket_resource = new StringConcat().join(bucket_name_trunc[0], "iot-bucket-${credentials-iot:ThingName}/*");
@@ -148,13 +168,13 @@ export class BulkIotCredentialsProviderStack extends Stack {
       ]
     });
 
-    const dynamicIndivQueueArn = new StringConcat().join(individualQueue.queueArn.toString(), "")
+    // const dynamicIndivQueueArn = new StringConcat().join(individualQueue.queueArn.toString(), "")
 
     const individualQueuePolicy = new iam.Policy(this, 'iotIndividualQueuePolicy', {
       policyName: 'iotIndividualQueuePolicy',
       statements: [new iam.PolicyStatement({
         resources: [
-          dynamicIndivQueueArn
+          `arn:aws:sqs:${this.region}:${this.account}:${this.account}-iot-queue-\${credentials-iot:ThingName}`
         ],
         actions: [
           "sqs:DeleteMessage",
@@ -348,7 +368,7 @@ export class BulkIotCredentialsProviderStack extends Stack {
     // print the Cloud9 IDE URL in the output
     // new CfnOutput(this, 'URL', { value: c9Env.getAtt('Url').toString() });
     new CfnOutput(this, 'Bucket', { value: provisioningBucket.bucketArn });
-    new CfnOutput(this, 'RoleAlias', { value: iotProvisioningRole.roleArn });
+    new CfnOutput(this, 'ProvisioningRole', { value: iotProvisioningRole.roleArn });
     new CfnOutput(this, 'RoleAlias', { value: iotRoleAlias.attrRoleAliasArn });
   }
 }
