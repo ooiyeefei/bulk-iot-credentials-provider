@@ -45,6 +45,7 @@ export S3_BUCKET={accountID}-iot-provisioning-bucket
 
 
 ## Deploy CDK stack
+- please ensure you have installed and setup AWS CDK (V2) https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html `npm install aws-cdk-lib`
 - `cdk synth`
 - `cdk deploy`
 - get provisionined iot-provisioining-role arn and export to cloud9 environment
@@ -52,7 +53,7 @@ export S3_BUCKET={accountID}-iot-provisioning-bucket
 
 ## Complete the remaining provisioining of certificates and registration to IoT Core
 ### Bulk create certificates for location-12x
-- Open Cloud9 environment created for you. `cd provisioning-template/provisioning`
+- Open Cloud9 environment created for you and change directory to "provisioning" folder > `cd provisioning`
 - Create keys and certificate signing requests (CSRs) and upload to s3 provisioning bucket
 ```
 # We have 2 buckets to test for 2 different locations, "location-123" and "location-456"

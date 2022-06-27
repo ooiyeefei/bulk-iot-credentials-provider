@@ -310,8 +310,8 @@ export class BulkIotCredentialsProviderStack extends Stack {
       ownerArn: "{subsitute your assumed role arn}",
       subnetId: vpc.publicSubnets[0].subnetId,
       repositories: [{
-        pathComponent: 'provisioning-template',
-        repositoryUrl: 'https://github.com/ooiyeefei/iot-bulk-provisioning-template',
+        pathComponent: 'bulk-iot-credentials',
+        repositoryUrl: 'https://github.com/ooiyeefei/bulk-iot-credentials-provider.git',
       }],
     });
 
